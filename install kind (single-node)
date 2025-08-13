@@ -1,0 +1,25 @@
+# Pre-requisites
+1. Create 2 AWS EC2 Instances manually from AWS Console, one each for the master (control plane) and worker (slave) node.
+2. Master = 2vCPU, 2GB RAM; Worker = 1 vCPU, 2GB RAM
+3. On master and worker nodes, become root.
+4. On master
+##single-node-kund cluster
+#install docker
+1. sudo apt install docker.io -y
+
+# How to install kind
+# For AMD64 / x86_64
+1. [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64
+# For ARM64
+2. [ $(uname -m) = aarch64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-arm64
+3. chmod +x ./kind
+4. sudo mv ./kind /usr/local/bin/kind
+# to create a cluster 
+5. kind create cluster --name=single-node-demo 
+6. snap install kubectl --classic
+# to see cluster name
+7. kubectl config current-context 
+# to verify run nginx
+8. kubectl create deployment nginx --image nginx
+9. kubectl get pods -w
+
