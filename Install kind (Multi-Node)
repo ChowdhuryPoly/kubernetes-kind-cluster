@@ -26,3 +26,4 @@ nodes:
 - role: worker
 - role: worker
 2. kind create cluster --name 6-node-cluster --config=multi-node-k8s-cluster.yaml
+2 kubectl get pods -w
