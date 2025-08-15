@@ -50,4 +50,5 @@ nodes:
  kind create cluster --image kindest/node:v1.31.9@sha256:b94a3a6c06198d17f59cca8c6f486236fa05e2fb359cbd75dabbfc348a10b211 --name cka-cluster-2 --config config.yaml
    kubectl config  --set-context kind-cka-cluster-2 or 1
   kubectl get nodes
+kubectl config get-contexts
   
